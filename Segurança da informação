@@ -1,4 +1,4 @@
-Definição do conceito de segurança da informação - Pag 24, Livro - Fundamentos da segurança da informação, Autor - Hans Baars
+Definição do conceito de segurança da informação - Pag 24, Livro - Fundamentos da segurança da informação, Autor - Hans Baars;
 
 Preservação da confidencialidade, integridade e disponibilidade da informação.
 Adicionalmente, outras propriedades, tais como autenticidade, responsabilidade, não repúdio e confiabilidade, também podem ser incluídas.
@@ -11,18 +11,20 @@ a fim de garantir a continuidade dos negócios, minimizar os riscos de negócio 
 
 Questionário:
 
-Itens Gerais:
+Itens Gerais;
 
-1. Você usa plataformas online para pagamentos
-2. Quais plataformas você costuma usar
+1. Você usa plataformas online para pagamentos:
+a. Sim
+b. Não
 
-a. Mercado pago
-b. Pag Bank
+2. Quais plataformas você costuma usar:
+a. Mercado pago/Pic Pay
+b. Pag Bank/Nubank
 c. outros
 
 
 
-Itens relacionados ao fator segurança:
+Itens relacionados ao fator segurança;
 
 1. Você sente que seus dados pessoais são confidenciais?
 
@@ -34,13 +36,15 @@ Itens relacionados ao fator segurança:
 
 5. 
 
-Itens relacionados ao fator usabilidade:
+Definição do conceito de usabilidade - Pag 21, Livro - Experiência do usuário UX, Autor - Cesar Ricardo Stati;
 
+"Teixeira(2014), a usabilidade deve garantir que as interfaces sejam fáceis de usar. Para ele,esse conceito envolve
+as seguintes questões: O usuário consegue realizar uma tarefa sem transtorno ou demora? Em um número razoável de passos? 
+As informações são fáceis de entender? O residual após a experiência é positivo ou o usuário saiu cognitivamente exausto dali?"
 
-Definição do conceito de usabilidade - Pag 21, Livro - Experiência do usuário UX, Autor - Cesar Ricardo Stati
+Itens relacionados ao fator usabilidade;
 
 Experiencia do usuário:
-
 1. 
 2. 
 3. 
@@ -48,7 +52,6 @@ Experiencia do usuário:
 5. 
 
 Satisfação do usuário:
-
 1. 
 2. 
 3. 
