@@ -1,9 +1,0 @@
-@ IN SOA ns1.isr.ifpe. root.isr.ifpe. (
-1 ; Serial
-5 ; Refresh
-86400 ; Retry
-2419200 ; Expire
-604800 ) ; Negative Cache TTL
-
-@ IN NS ns1.isr.ifpe.
-ns1 IN A 172.16.0.100
