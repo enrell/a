@@ -28,6 +28,7 @@ class State(enum.Enum):
 	sick = 1
 	dead = 2
 	immune = 3
+	hospital = 5
 
 class Individual:
 	def __init__(self, state):
@@ -41,18 +42,20 @@ class RandomWalkModel:
 		self.currentGeneration = 0
 		
 		#
-		# 			healthy	sick	dead	immune
-		# healthy	1.0		0.0		0.0		0.0
-		# sick		0.1		0.2		0.3		0.4		
-		# dead		0.0		0.0		0.0		0.0
-		# immune	0.1		0.0		0.0		0.0
+		# 			healthy	sick	dead	immune	hospital
+		# healthy	1.0		0.0		0.0		0.1 	0.0
+		# sick		0.1		0.4		0.3		0.2		0.5
+		# dead		0.0		0.0		0.0		0.0 	0.0
+		# immune	0.1		0.0		0.0		0.0 	0.0
+		# hospital	0.1	    0.2	    0.3	    0.4 	0.5
 		#
 		# notice how there is no transition from the healthy state
-		self.transitionProbabilities = [[1.0, 0.0, 0.0, 0.0],
-		 								[0.1, 0.2, 0.3, 0.4],
-		 								[0.0, 0.0, 0.0, 0.0],
-		 								[0.1, 0.0, 0.0, 0.0]]
-		self.contagionFactor = 0.256
+		self.transitionProbabilities = [[1.0, 0.0, 0.0, 0.1, 0.0],
+		 								[0.1, 0.4, 0.3, 0.2, 0.5],
+		 								[0.0, 0.0, 0.0, 0.0, 0.0],
+		 								[0.1, 0.0, 0.0, 0.0, 0.0],
+		 								[0.1, 0.2, 0.3, 0.4, 0.5]]
+		self.contagionFactor = 1 #0.256
 
 		for i in range(populationMatrixSize):
 			self.population.append([])
@@ -185,6 +188,22 @@ class RandomWalkModel:
 			self.logReport(verbose)
 			if (i % 10 == 0):
 				model.printImage(i)
+	# def hospital(self):
+	# 	hospital = 221
+
+	# 	for line in self.population:
+	# 		for individual in line:
+	# 			if individual.state == State.hospital:
+	# 				hospital = hospital + 1
+	# 			if hospital == 0:
+	# 				pass
+	# 			if individual.state == State.dead:
+	# 				pass
+	# 			if individual.state == State.healthy:
+	# 				hospital = hospital + 1
+
+	# 	return hospital
+
 	
 	def numberOfDeaths(self):
 		deaths = 0
@@ -220,6 +239,8 @@ class RandomWalkModel:
 		    		img.putpixel((i, j), (256, 0, 0))	#Red
 		    	elif (self.population[i][j].state == State.immune):
 		    		img.putpixel((i, j), (0, 0, 256))	#Blue
+		    	elif (self.population[i][j].state == State.hospital):
+		    		img.putpixel((i, j), (0, 0, 0))
 		    	else:
 		    		print("INVALID STATE")
 
@@ -228,9 +249,11 @@ class RandomWalkModel:
 
 numberOfRuns = 1
 gridSize = 365
-numberOfGenerations = 100
+numberOfGenerations = 3
 
 for i in range(0, numberOfRuns):
 	model = RandomWalkModel(gridSize)
 	model.simulation(numberOfGenerations, True)
 	print(model.numberOfDeaths())
+	# print(model.hospital(), "test")
+
